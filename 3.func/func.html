@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Connecting</title>
+	</head>
+	<body>
+		<script src="func.js"></script>
+		<p>Thus, the connecting layer can be connected as would another javascript file.</p>
+		<p id="interact">Hello</p>
+
+		
+		<script>
+			var wrapped_mul = Module.cwrap("mul5", "number", ["number"]);
+
+			var press = document.getElementById("interact").addEventListener("click", function() {
+				console.log("The result of mul5(4) is:", wrapped_mul(4));
+			});
+		</script>
+	</body>
+</html>
